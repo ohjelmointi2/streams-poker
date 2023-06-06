@@ -16,6 +16,10 @@ java {
     targetCompatibility = 17
 }
 
+group 'io.github.ohjelmointi2'
+version '1.0-SNAPSHOT'
+description 'poker'
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -31,7 +35,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'gradle.template.App'
+    mainClass = 'poker.App'
 }
 
 tasks.named('test') {
