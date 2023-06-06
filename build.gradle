@@ -11,6 +11,11 @@ plugins {
     id 'application'
 }
 
+java {
+    sourceCompatibility = 17
+    targetCompatibility = 17
+}
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -32,4 +37,17 @@ application {
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+
+    testLogging {
+        showExceptions true
+        showCauses true
+        events "PASSED", "FAILED"
+        showStandardStreams true
+    }
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': application.mainClass
+    }
 }
